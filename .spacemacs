@@ -320,6 +320,9 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; delete backward char
+  (keyboard-translate ?\C-h ?\C-?)
+
   ;; load path
   (setq load-path
         (append (list nil
@@ -329,6 +332,7 @@ you should place your code here."
   ;; mozc
   (require 'mozc)
   (setq default-input-method "japanese-mozc")
+  
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
