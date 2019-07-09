@@ -329,10 +329,13 @@ you should place your code here."
                       (expand-file-name "~/.emacs.d/lisp"))
                 load-path))
 
+  ;; Japanese font
+  (set-fontset-font t 'japanese-jisx0208 (font-spec :family "IPAExGothic"))
+
   ;; mozc
   (require 'mozc)
   (setq default-input-method "japanese-mozc")
-  
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
