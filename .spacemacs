@@ -63,7 +63,8 @@ values."
    dotspacemacs-additional-packages
    '(
      prettier-js
-     elscreen)
+     elscreen
+     )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -318,6 +319,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  
+  ;;mozc
+  (require 'mozc)
+  (setq default-input-method "japanese-mozc")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
