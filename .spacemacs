@@ -336,6 +336,16 @@ you should place your code here."
   (require 'mozc)
   (setq default-input-method "japanese-mozc")
 
+  ;; doc-annotate
+  (setq doc-view-scale-internally nil)
+  (add-hook 'doc-view-mode-hook
+            '(lambda ()
+               (local-set-key "c" 'doc-annotate-add-annotation)
+               (local-set-key [mouse-1] 'doc-annotate-add-annotation)))
+  (autoload 'doc-annotate-mode "doc-annotate")
+  (autoload 'doc-annotate-add-annotation "doc-annotate")
+  (add-to-list 'auto-mode-alist '("\\.ant$" . doc-annotate-mode))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
