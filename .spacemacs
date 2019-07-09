@@ -336,6 +336,13 @@ you should place your code here."
   (require 'mozc)
   (setq default-input-method "japanese-mozc")
 
+  ;; elscreen
+  (setq elscreen-prefix-key (kbd "C-o"))
+  (setq elscreen-tab-display-kill-screen nil) ;; not display [X]
+  (setq elscreen-tab-display-control nil) ;; not display [<->]
+  (elscreen-start)
+  (elscreen-create)
+
   ;; doc-annotate
   (setq doc-view-scale-internally nil)
   (add-hook 'doc-view-mode-hook
