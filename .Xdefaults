@@ -1,7 +1,7 @@
 ! Rxvt
 Rxvt*geometry:			80x35
 Rxvt*foreground:		white
-Rxvt*background:		#172727
+Rxvt*background:		black
 Rxvt*cursorColor:		aquamarine1
 Rxvt*font:			xft:source code pro:regular:pixelsize=20
 Rxvt*boldFont:			terminus-bold-12

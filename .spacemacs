@@ -341,7 +341,7 @@ you should place your code here."
   (setq elscreen-tab-display-kill-screen nil) ;; not display [X]
   (setq elscreen-tab-display-control nil) ;; not display [<->]
   (elscreen-start)
-  (elscreen-create)
+  (elscreen-create-internal)
 
   ;; doc-annotate
   (setq doc-view-scale-internally nil)
