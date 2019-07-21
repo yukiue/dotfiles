@@ -323,21 +323,26 @@ you should place your code here."
   ;; delete backward char
   (keyboard-translate ?\C-h ?\C-?)
 
+
   ;; load path
   (setq load-path
         (append (list nil
                       (expand-file-name "~/.emacs.d/lisp"))
                 load-path))
 
+
   ;; Japanese font
   (set-fontset-font t 'japanese-jisx0208 (font-spec :family "IPAExGothic"))
+
 
   ;; mozc
   (require 'mozc)
   (setq default-input-method "japanese-mozc")
 
+
   ;; mew
   (setq mew-imap-size 100000000) ;; 100MB
+
 
   ;; elscreen
   (setq elscreen-prefix-key (kbd "C-o"))
@@ -345,6 +350,7 @@ you should place your code here."
   (setq elscreen-tab-display-control nil) ;; not display [<->]
   (elscreen-start)
   (elscreen-create-internal)
+
 
   ;; open file in external application
   (define-key dired-mode-map (kbd "RET") 'dired-open-file)
@@ -365,6 +371,7 @@ you should place your code here."
           (start-process cmd nil cmd file)
         ;; call find-file as default action
         (find-file file))))
+
 
   ;; doc-annotate
   (setq doc-view-scale-internally nil)
