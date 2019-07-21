@@ -346,6 +346,26 @@ you should place your code here."
   (elscreen-start)
   (elscreen-create-internal)
 
+  ;; open file in external application
+  (define-key dired-mode-map (kbd "RET") 'dired-open-file)
+  (setq dired-file-apps
+        '(("pdf" . "mupdf")
+          ("dvi" . "xdvi")
+          ("eps" . "gv")
+          ("jpg" . "iv")
+          ("xls" . "libreoffice")))
+
+  (defun dired-open-file ()
+    (interactive)
+    (let* ((find-file-run-dired t)
+           (file (dired-get-file-for-visit))
+           (ext (file-name-extension file))
+           (cmd (cdr (assoc ext dired-file-apps))))
+      (if cmd
+          (start-process cmd nil cmd file)
+        ;; call find-file as default action
+        (find-file file))))
+
   ;; doc-annotate
   (setq doc-view-scale-internally nil)
   (add-hook 'doc-view-mode-hook
