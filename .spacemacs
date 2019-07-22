@@ -342,6 +342,7 @@ you should place your code here."
 
   ;; mew
   (setq mew-imap-size 100000000) ;; 100MB
+  (setq mew-use-cached-passwd t)
 
 
   ;; elscreen
