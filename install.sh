@@ -4,7 +4,7 @@ DOTPATH=~/.dotfiles
 
 for dotfile in .??*
 do
-    [ "$file" = ".git" ] && continue
+    [ "$dotfile" = ".git" ] && continue
 
-    ln -snfv "$DOTPATH/$file" "$HOME"/"$file"
+    ln -snfv "$DOTPATH/$dotfile" "$HOME"/"$dotfile"
 done
