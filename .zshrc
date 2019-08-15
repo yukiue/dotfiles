@@ -1,8 +1,7 @@
-source ~/.zsh/alias.zsh
-source ~/.zsh/proxy.zsh
-source ~/.zsh/export.zsh
-source ~/.zsh/autoload.zsh
-
+for file in ~/.zsh/*.zsh
+do
+    source $file
+done
 
 
 PROMPT='%F{green}%n@%m%f:%F{red}%d%f
