@@ -10,7 +10,7 @@ values."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;111; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 'spacemacs
+   dotspacemacs-distribution (setq auto-insert-query nil)'spacemacs
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
@@ -356,6 +356,29 @@ you should place your code here."
   (setq elscreen-tab-display-control nil) ;; not display [<->]
   (elscreen-start)
   (elscreen-create-internal)
+
+
+  ;; auto insert
+  (require 'autoinsert)
+  (add-hook 'find-file-hooks 'auto-insert)
+  (setq auto-insert-query nil)
+  (setq auto-insert-alist nil)
+  (setq auto-insert-alist
+        (append '(
+                  (("\\.sh$" . "shell script template")
+                   nil
+                   "#!/bin/sh\n"
+                   "\n"
+                   _
+                   )) auto-insert-alist))
+  (setq auto-insert-alist
+        (append '(
+                  (("\\.py$" . "python template")
+                   nil
+                   "#!/usr/bin/env python3\n"
+                   "\n"
+                   _
+                   )) auto-insert-alist))
 
 
   ;; open file in external application
