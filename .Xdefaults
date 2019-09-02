@@ -17,17 +17,16 @@ Rxvt*color2:			aquamarine3
 Rxvt*color3:			aquamarine1
 Rxvt*color4:			aquamarine4
 Rxvt*color5:			orange
-Rxvt*color6:			aquamarine2
-Rxvt*color7:			white
-Rxvt*color8:			gray50
-Rxvt*color9:			OrangeRed
-Rxvt*color10:			aquamarine3
-Rxvt*color11:			aquamarine1
-Rxvt*color12:			aquamarine4
-Rxvt*color13:			orange
-Rxvt*color14:			aquamarine2
-Rxvt*color15:			white
-
+! Rxvt*color6:			aquamarine2
+! Rxvt*color7:			white
+! Rxvt*color8:			gray50
+! Rxvt*color9:			OrangeRed
+! Rxvt*color10:			aquamarine3
+! Rxvt*color11:			aquamarine1
+! Rxvt*color12:			aquamarine4
+! Rxvt*color13:			orange
+! Rxvt*color14:			aquamarine2
+! Rxvt*color15:			white
 
 ! Emacs
 Emacs.geometry:			80x54
