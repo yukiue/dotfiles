@@ -1,10 +1,11 @@
-for file in ~/.zsh/*.zsh
+fo
+file in ~/.zsh/*.zsh
 do
     source $file
 done
 
 
-PROMPT='%F{green}%n@%m%f:%F{red}%d%f
+PROMPT='%F{green}%n%f@%F{cyan}%m%f:%F{red}%d%f
 %# '
 
 
