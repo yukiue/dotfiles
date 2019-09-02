@@ -1,5 +1,4 @@
-fo
-file in ~/.zsh/*.zsh
+for file in ~/.zsh/*.zsh
 do
     source $file
 done
