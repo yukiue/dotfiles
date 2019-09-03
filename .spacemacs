@@ -345,6 +345,10 @@ you should place your code here."
   (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 
+  (setq org-latex-pdf-process
+        '("uplatex %b.tex" "uplatex %b.tex" "dvipdfmx %b.dvi"))
+
+
   ;; mew
   (setq mew-imap-size 100000000) ;; 100MB
   (setq mew-use-cached-passwd t)
