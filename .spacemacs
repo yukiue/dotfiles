@@ -347,7 +347,7 @@ you should place your code here."
 
   ;; org to pdf
   (setq org-latex-pdf-process
-        '("platex %b.tex" "platex %b.tex" "dvipdfmx %b.dvi"))
+        '("uplatex %b.tex" "uplatex %b.tex" "dvipdfmx %b.dvi"))
 
 
   ;; mew
