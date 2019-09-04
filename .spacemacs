@@ -345,8 +345,9 @@ you should place your code here."
   (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 
+  ;; org to pdf
   (setq org-latex-pdf-process
-        '("uplatex %b.tex" "uplatex %b.tex" "dvipdfmx %b.dvi"))
+        '("platex %b.tex" "platex %b.tex" "dvipdfmx %b.dvi"))
 
 
   ;; mew
