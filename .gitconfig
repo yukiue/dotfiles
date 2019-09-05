@@ -3,3 +3,4 @@
 	name = yukiue
 [alias]
 	st = status
+  co = checkout

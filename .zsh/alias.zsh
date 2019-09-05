@@ -28,8 +28,12 @@ alias g='git'
 alias x='startx'
 alias open='xdg-open'
 
+alias remacs='emacs -q'
+# alias remacs='emacs -q -l ~/.remacs.d'
 alias mew='emacs -e mew'
 alias reload='exec $SHELL -l'
 alias cdl='cd $(ls -lt | grep ^d | awk '\''NR==1 {print $9}'\'')'
-alias output_hdmi='xrandr --output HDMI-1 --same-as eDP-1 --mode 1920x1080'
+alias xrandr_1920x1080='xrandr --output HDMI-1 --same-as eDP-1 --mode 1920x1080'
+alias xrandr_800x600='xrandr --output HDMI-1 --same-as eDP-1 --mode 800x600
+'
 alias mozc_config='/usr/lib/mozc/mozc_tool --mode=config_dialog'
