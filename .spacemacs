@@ -411,6 +411,11 @@ you should place your code here."
         (find-file file))))
 
 
+  ;; dired
+  (global-set-key "\C-xd" (lambda ()
+                            (interactive)
+                            (dired default-directory)))
+
   ;; doc-annotate
   (setq doc-view-scale-internally nil)
   (add-hook 'doc-view-mode-hook
