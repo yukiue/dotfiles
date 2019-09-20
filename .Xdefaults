@@ -11,22 +11,27 @@ Rxvt*scrollBar:			off
 Rxvt*borderColor:		aquamarine4
 
 ! 0=black, 1=red,  2=green,  3=yellow,  4=blue, 5=magenta,  6=cyan,  7=white
-Rxvt*color0:			gray50
-Rxvt*color1:			OrangeRed
-Rxvt*color2:			aquamarine3
-Rxvt*color3:			aquamarine1
-Rxvt*color4:			aquamarine4
-Rxvt*color5:			orange
-! Rxvt*color6:			aquamarine2
-! Rxvt*color7:			white
-! Rxvt*color8:			gray50
-! Rxvt*color9:			OrangeRed
-! Rxvt*color10:			aquamarine3
-! Rxvt*color11:			aquamarine1
-! Rxvt*color12:			aquamarine4
-! Rxvt*color13:			orange
-! Rxvt*color14:			aquamarine2
-! Rxvt*color15:			white
+
+
+URxvt.depth: 32
+! URxvt*foreground: #d0d0d0
+! URxvt.background: [75]#000000
+URxvt*color0: #2E3436
+URxvt*color1: #CC0000
+URxvt*color2: #4E9A06
+URxvt*color3: #C4A000
+URxvt*color4: #3465A4
+URxvt*color5: #75507B
+URxvt*color6: #06989A
+URxvt*color7: #D3D7CF
+URxvt*color8: #555753
+URxvt*color9: #EF2929
+URxvt*color10: #8AE234
+URxvt*color11: #FCE94F
+URxvt*color12: #729FCF
+URxvt*color13: #AD7FA8
+URxvt*color14: #34E2E2
+URxvt*color15: #EEEEEC
 
 ! Emacs
 Emacs.geometry:			80x54
