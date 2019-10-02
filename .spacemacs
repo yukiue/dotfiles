@@ -354,6 +354,14 @@ you should place your code here."
   (setq org-latex-pdf-process
         '("uplatex %b.tex" "uplatex %b.tex" "dvipdfmx %b.dvi"))
 
+  ;; open file after export
+  (eval-after-load "org"
+    '(progn
+       (delete '("\\.pdf\\'" . default) org-file-apps)
+       (add-to-list 'org-file-apps '("\\.pdf\\'" . "mupdf %s"))
+       (add-to-list 'org-file-apps '("\\.eps\\'" . "gv %s")))
+    )
+
 
   ;; mew
   (setq mew-imap-size 100000000) ;; 100MB
