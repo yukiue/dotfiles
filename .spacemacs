@@ -355,12 +355,12 @@ you should place your code here."
   (setq org-latex-pdf-process
         '("uplatex %b.tex" "uplatex %b.tex" "dvipdfmx %b.dvi"))
 
+
   ;; open file after export
   (eval-after-load "org"
     '(progn
        (delete '("\\.pdf\\'" . default) org-file-apps)
-       (add-to-list 'org-file-apps '("\\.pdf\\'" . "mupdf %s"))
-       (add-to-list 'org-file-apps '("\\.eps\\'" . "gv %s")))
+       (add-to-list 'org-file-apps '("\\.pdf\\'" . "mupdf %s")))
     )
 
 
@@ -375,7 +375,8 @@ you should place your code here."
   (setq elscreen-tab-display-control nil) ;; not display [<->]
   (elscreen-start)
   (elscreen-create-internal)
-
+  (set-face-foreground 'elscreen-tab-current-screen-face "yellow")
+  (set-face-background 'elscreen-tab-current-screen-face "gray80")
 
   ;; auto insert
   (require 'autoinsert)
