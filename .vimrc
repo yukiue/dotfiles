@@ -9,3 +9,5 @@ set cursorline
 
 " highlight column
 set cursorcolumn
+
+imap fd <esc>

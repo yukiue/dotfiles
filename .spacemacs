@@ -9,7 +9,7 @@ values."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
-   ;111; or `spacemacs'. (default 'spacemacs)
+   ;111; o#474957r `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
@@ -375,8 +375,9 @@ you should place your code here."
   (setq elscreen-tab-display-control nil) ;; not display [<->]
   (elscreen-start)
   (elscreen-create-internal)
-  (set-face-foreground 'elscreen-tab-current-screen-face "yellow")
-  (set-face-background 'elscreen-tab-current-screen-face "gray80")
+  (set-face-background 'elscreen-tab-current-screen-face "#292B2E")
+  (set-face-foreground 'elscreen-tab-current-screen-face "#BC6EC5")
+
 
   ;; auto insert
   (require 'autoinsert)
@@ -454,4 +455,4 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(linum ((t (:background "#212026" :foreground "salmon")))))
