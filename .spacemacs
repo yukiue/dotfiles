@@ -428,6 +428,13 @@ you should place your code here."
                             (interactive)
                             (dired default-directory)))
 
+
+  ;; proxy
+  ;; (setq url-proxy-services
+  ;;       '(("http"     . "http://proxy.ksc.kwansei.ac.jp:8080")
+  ;;         ("https"    . "http://proxy.ksc.kwansei.ac.jp:8080")))
+
+
   ;; doc-annotate
   (setq doc-view-scale-internally nil)
   (add-hook 'doc-view-mode-hook
