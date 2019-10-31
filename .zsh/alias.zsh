@@ -25,6 +25,7 @@ alias open='xdg-open'
 
 alias remacs='emacs -q'
 # alias remacs='emacs -q -l ~/.remacs.d'
+alias ec='emacsclient'
 alias mew='emacs -e mew'
 alias reload='exec $SHELL -l'
 alias cdl='cd $(ls -lt | grep ^d | awk '\''NR==1 {print $9}'\'')'
