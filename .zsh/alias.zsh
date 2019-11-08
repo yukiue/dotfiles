@@ -1,3 +1,4 @@
+alias l='ls --color=auto'
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
@@ -14,7 +15,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias grep='grep --color=auto'
-
+alias mkdir='mkdir -p'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
@@ -25,7 +26,7 @@ alias open='xdg-open'
 
 alias remacs='emacs -q'
 # alias remacs='emacs -q -l ~/.remacs.d'
-alias ec='emacsclient'
+alias ecn='emacsclient -n'
 alias mew='emacs -e mew'
 alias reload='exec $SHELL -l'
 alias cdl='cd $(ls -lt | grep ^d | awk '\''NR==1 {print $9}'\'')'
