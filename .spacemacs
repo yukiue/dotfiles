@@ -418,6 +418,10 @@ you should place your code here."
                    )) auto-insert-alist))
 
 
+  ;; dired list
+  (setq dired-listing-switches "-alh --group-directories-first")
+
+
   ;; open file in external application
   (define-key dired-mode-map (kbd "RET") 'dired-open-file)
   (setq dired-file-apps
