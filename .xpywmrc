@@ -2,7 +2,7 @@
 # global TITLE_FONT
 # TITLE_FONT = '-hiro-fixed-medium-r-normal--8-80-75-75-c-80-iso646.1991-irv'
 
-# add key binding: Alt + Ctrl + 3 to switch chromium start on/off
+# add key binding: Alt + Ctrl + 3 to switch chromium on/off
 KEYBOARD_HANDLER['3'] = {
     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'switch chromium'
 }
@@ -10,12 +10,17 @@ KEYBOARD_HANDLER['3'] = {
 #     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'pidof chromium || chromium &'
 # }
 
-# add key binding: Alt + Ctrl + 4 to switch firefox start on/off
+# add key binding: Alt + Ctrl + 4 to switch firefox on/off
 KEYBOARD_HANDLER['4'] = {
     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'switch firefox'
 }
 
-# add key binding: Alt + Ctrl + 0 to access your server
-# KEYBOARD_HANDLER['0'] = {
-#     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'tmux new-window -n:fserv "ssh fserv"'
-# }
+# add key binding: Alt + Ctrl + 5 to switch sendscreen on/off
+KEYBOARD_HANDLER['4'] = {
+    'modifier': X.Mod1Mask | X.ControlMask, 'command': 'pkill -f sendscreen'
+}
+
+# add key binding: Alt + Ctrl + 0 to access fserv
+KEYBOARD_HANDLER['0'] = {
+    'modifier': X.Mod1Mask | X.ControlMask, 'command': 'tmux new-window -n:fserv "ssh fserv"'
+}
