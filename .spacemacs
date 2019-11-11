@@ -338,6 +338,14 @@ you should place your code here."
                 load-path))
 
 
+  ;; no backup file
+  ;; *.~
+  (setq make-backup-files nil)
+  ;; .*#
+  (setq auto-save-default nil)
+
+
+
   ;; Japanese font
   (set-fontset-font t 'japanese-jisx0208 (font-spec :family "IPAExGothic"))
 
