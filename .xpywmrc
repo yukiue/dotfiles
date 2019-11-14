@@ -16,8 +16,8 @@ KEYBOARD_HANDLER['4'] = {
 }
 
 # add key binding: Alt + Ctrl + 5 to switch sendscreen on/off
-KEYBOARD_HANDLER['4'] = {
-    'modifier': X.Mod1Mask | X.ControlMask, 'command': 'pkill -f sendscreen'
+KEYBOARD_HANDLER['5'] = {
+    'modifier': X.Mod1Mask | X.ControlMask, 'command': 'switch sendscreen -s moon'
 }
 
 # add key binding: Alt + Ctrl + 0 to access fserv
