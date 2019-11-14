@@ -8,7 +8,7 @@ Rxvt*boldFont:			terminus-bold-12
 Rxvt*loginShell:		on
 Rxvt*visualBell:		on
 Rxvt*scrollBar:			off
-Rxvt*borderColor:		aquamarine4
+Rxvt*borderColor:		#ebb134
 
 ! 0=black, 1=red,  2=green,  3=yellow,  4=blue, 5=magenta,  6=cyan,  7=white
 
