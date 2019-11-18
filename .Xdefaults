@@ -3,8 +3,9 @@ Rxvt*geometry:			80x35
 Rxvt*foreground:		white
 Rxvt*background:		black
 Rxvt*cursorColor:		#BC6EC5 ! aquamarine1 
-Rxvt*font:			xft:source code pro:regular:pixelsize=20
-Rxvt*boldFont:			terminus-bold-12
+Rxvt*font:			xft:source code pro:regular:pixelsize=20,\
+                xft:IPAExGothic :regular:pixelsize=20
+Rxvt*boldFont:			xft:source code pro:semibold:pixelsize=20
 Rxvt*loginShell:		on
 Rxvt*visualBell:		on
 Rxvt*scrollBar:			off
