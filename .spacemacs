@@ -375,7 +375,9 @@ you should place your code here."
   ;; mew
   (setq mew-imap-size 100000000) ;; 100MB
   (setq mew-use-cached-passwd t)
+  (setq mew-signature-insert-last t)
   (setq mew-save-dir "~/tmp")
+  (setq mew-prog-pdf-ext '("mupdf" ()t))
 
 
   ;; elscreen
