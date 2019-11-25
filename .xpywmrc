@@ -20,6 +20,11 @@ KEYBOARD_HANDLER['5'] = {
     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'switch sendscreen -s moon'
 }
 
+# add key binding: Alt + Ctrl + 9 to access mars (timer)
+KEYBOARD_HANDLER['9'] = {
+    'modifier': X.Mod1Mask | X.ControlMask, 'command': 'tmux new-window -n:fserv "ssh pi@mars"'
+}
+
 # add key binding: Alt + Ctrl + 0 to access fserv
 KEYBOARD_HANDLER['0'] = {
     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'tmux new-window -n:fserv "ssh fserv"'
