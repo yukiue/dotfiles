@@ -431,6 +431,9 @@ you should place your code here."
   (setq dired-listing-switches "-alh --group-directories-first")
 
 
+  ;; dired keybinding
+  (define-key dired-mode-map (kbd "C-o") 'dired-up-directory)
+
   ;; open file in external application
   (define-key dired-mode-map (kbd "RET") 'dired-open-file)
   (setq dired-file-apps
