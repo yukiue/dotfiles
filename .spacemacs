@@ -345,10 +345,9 @@ you should place your code here."
 
 
   ;; no backup file
-  ;; *.~
-  (setq make-backup-files nil)
-  ;; .*#
-  (setq auto-save-default nil)
+  (setq make-backup-files nil) ;; *.~
+  (setq auto-save-default nil) ;; .*#
+  (setq delete-auto-save-files t)
 
 
 
@@ -382,9 +381,10 @@ you should place your code here."
   (setq mew-imap-size 100000000) ;; 100MB
   (setq mew-use-cached-passwd t)
   (setq mew-signature-insert-last t)
-  (setq mew-save-dir "~/tmp")
+  (setq mew-save-dir "/tmp")
   (setq mew-prog-pdf-ext '("mupdf" ()t))
-
+  (setq mew-prog-image/*-ext '("mupdf" ()t))
+  (setq mew-prog-postscript '("gv" ()t))
 
   ;; elscreen
   (setq elscreen-prefix-key (kbd "C-z"))
