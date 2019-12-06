@@ -379,7 +379,7 @@ you should place your code here."
 
 
   ;; mew
-  ;; (global-set-key "\C-xm" 'mew)
+  (global-set-key "\C-xm" 'mew)
   (setq mew-imap-size 100000000) ;; 100MB
   (setq mew-use-cached-passwd t)
   (setq mew-signature-insert-last t)
