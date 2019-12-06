@@ -36,6 +36,7 @@ values."
      octave
      graphviz
      python
+     (python :variables python-enable-yapf-format-on-save t)
      html
      ;; latex
      ;; ----------------------------------------------------------------
@@ -378,6 +379,7 @@ you should place your code here."
 
 
   ;; mew
+  ;; (global-set-key "\C-xm" 'mew)
   (setq mew-imap-size 100000000) ;; 100MB
   (setq mew-use-cached-passwd t)
   (setq mew-signature-insert-last t)
@@ -385,6 +387,11 @@ you should place your code here."
   (setq mew-prog-pdf-ext '("mupdf" ()t))
   (setq mew-prog-image/*-ext '("mupdf" ()t))
   (setq mew-prog-postscript '("gv" ()t))
+
+
+  ;; helm
+  ;; (global-set-key "\M-r" 'helm-recentf)
+
 
   ;; elscreen
   (setq elscreen-prefix-key (kbd "C-z"))
@@ -459,12 +466,6 @@ you should place your code here."
   (global-set-key "\C-xd" (lambda ()
                             (interactive)
                             (dired default-directory)))
-
-
-  ;; proxy
-  ;; (setq url-proxy-services
-  ;;       '(("http"     . "http://proxy.ksc.kwansei.ac.jp:8080")
-  ;;         ("https"    . "http://proxy.ksc.kwansei.ac.jp:8080")))
 
 
   ;; doc-annotate
