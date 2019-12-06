@@ -390,7 +390,7 @@ you should place your code here."
 
 
   ;; helm
-  ;; (global-set-key "\M-r" 'helm-recentf)
+  (global-set-key "\M-r" 'helm-recentf)
 
 
   ;; elscreen
