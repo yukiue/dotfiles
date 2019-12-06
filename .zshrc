@@ -7,9 +7,33 @@ done
 PROMPT='%F{green}%n%f@%F{cyan}%m%f:%F{red}%d%f
 %# '
 
+setopt auto_pushd
+setopt pushd_ignore_dups
+# setopt GLOBDOTS
+setopt correct
+setopt correct_all
+setopt no_beep
+# setopt always_last_prompt
+
+alias -g L='| less'
+alias -g H='| head'
+alias -g G='| grep'
+
+alias -g X='| xargs'
+
+
+zstyle ':completion:*:default' menu select=2
+
+# エイリアスでコマンドラインの自動補完を切り替える
+setopt completealiases
+
+# ls after change directory
+function chpwd() { ls }
 
 # 他のターミナルとヒストリーを共有
 setopt share_history
+# setopt Hist_Ignore_Dups
+setopt hist_ignore_dups
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 #HISTTIMEFORMAT='%Y/%m/%d %H:%M:%'
@@ -27,7 +51,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 
 #path
-path=($HOME/bin(N-/) $path)
+# path=($HOME/bin(N-/) $path)
 
 #keybind like emacs1
 bindkey -e
@@ -108,3 +132,20 @@ RPROMPT='`rprompt-git-current-branch`'
 #     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 # }
 # RPROMPT="%1(v|%F{yellow}%1v%f|)"
+
+
+# pip completion
+eval "`pip completion --zsh`"
+
+# # pip zsh completion start
+# function _pip_completion {
+#   local words cword
+#   read -Ac words
+#   read -cn cword
+#   reply=( $( COMP_WORDS="$words[*]" \
+#              COMP_CWORD=$(( cword-1 )) \
+#              PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
+# }
+# compctl -K _pip_completion pip
+# # pip zsh completion end
+
