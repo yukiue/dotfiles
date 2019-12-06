@@ -6,9 +6,6 @@
 KEYBOARD_HANDLER['3'] = {
     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'switch chromium'
 }
-# KEYBOARD_HANDLER['3'] = {
-#     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'pidof chromium || chromium &'
-# }
 
 # add key binding: Alt + Ctrl + 4 to switch firefox on/off
 KEYBOARD_HANDLER['4'] = {
@@ -18,6 +15,11 @@ KEYBOARD_HANDLER['4'] = {
 # add key binding: Alt + Ctrl + 5 to switch sendscreen on/off
 KEYBOARD_HANDLER['5'] = {
     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'switch sendscreen -s moon'
+}
+
+# add key binding: Alt + Ctrl + 8 to execute xrandr
+KEYBOARD_HANDLER['8'] = {
+    'modifier': X.Mod1Mask | X.ControlMask, 'command': 'xrandr --output DP-1 --same-as eDP-1 --mode 1920x1080'
 }
 
 # add key binding: Alt + Ctrl + 9 to access mars (timer)
