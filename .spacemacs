@@ -356,6 +356,9 @@ you should place your code here."
   (set-fontset-font t 'japanese-jisx0208 (font-spec :family "IPAExGothic"))
 
 
+  ;; follow symbolic link
+  (setq vc-follow-symlinks t)
+
   ;; mozc
   (require 'mozc)
   (setq default-input-method "japanese-mozc")
