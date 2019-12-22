@@ -390,6 +390,7 @@ you should place your code here."
   (setq mew-use-cached-passwd t)
   (setq mew-signature-insert-last t)
   (setq mew-save-dir "/tmp")
+  ;; C-c C-e settings
   (setq mew-prog-pdf-ext '("mupdf" ()t))
   (setq mew-prog-image/*-ext '("mupdf" ()t))
   (setq mew-prog-postscript '("gv" ()t))
@@ -442,7 +443,7 @@ you should place your code here."
 
 
   ;; restart emacs
-  (global-set-key "\C-c\C-r" 'restart-emacs)
+  (global-set-key "\C-c\C-r\C-r" 'restart-emacs)
 
 
   ;; dired list
