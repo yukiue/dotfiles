@@ -11,15 +11,9 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 # setopt GLOBDOTS
 setopt correct
-setopt correct_all
+# setopt correct_all
 setopt no_beep
 # setopt always_last_prompt
-
-alias -g L='| less'
-alias -g H='| head'
-alias -g G='| grep'
-
-alias -g X='| xargs'
 
 
 zstyle ':completion:*:default' menu select=2
