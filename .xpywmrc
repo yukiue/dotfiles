@@ -17,6 +17,11 @@ KEYBOARD_HANDLER['5'] = {
     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'switch sendscreen -s moon'
 }
 
+# add key binding: Alt + Ctrl + 7 to execute xrandr
+KEYBOARD_HANDLER['7'] = {
+    'modifier': X.Mod1Mask | X.ControlMask, 'command': 'xrandr --output HDMI-1 --same-as eDP-1 --mode 1920x1080'
+}
+
 # add key binding: Alt + Ctrl + 8 to execute xrandr
 KEYBOARD_HANDLER['8'] = {
     'modifier': X.Mod1Mask | X.ControlMask, 'command': 'xrandr --output DP-1 --same-as eDP-1 --mode 1920x1080'
