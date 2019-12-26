@@ -99,7 +99,7 @@ values."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https nil
+   dotspacemacs-elpa-https t
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    dotspacemacs-elpa-timeout 5
    ;; If non nil then spacemacs will check for updates at startup
@@ -321,11 +321,6 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
-  ;; proxy
-  ;; (setq url-proxy-services `(("no_proxy" . "localhost,127.0.0.1")
-  ;;                            ("http"  . "http://proxy.kwansei.ac.jp:8080")
-  ;;                            ("https" . "http://proxy.kwansei.ac.jp:8080")))
-
   )
 
 (defun dotspacemacs/user-config ()
@@ -335,6 +330,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+
+  (server-start)
+
 
   ;; delete backward char
   (keyboard-translate ?\C-h ?\C-?)
