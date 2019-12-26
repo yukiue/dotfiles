@@ -26,7 +26,7 @@ alias open='xdg-open'
 
 alias remacs='emacs -q'
 # alias remacs='emacs -q -l ~/.remacs.d'
-alias ecn='emacsclient -n'
+alias ec='emacsclient -e "(elscreen-create)" 2>/dev/null && emacsclient -n'
 alias e='emacs -nw'
 alias mew='emacs -e mew'
 alias reload='exec $SHELL -l'
