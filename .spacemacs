@@ -414,6 +414,7 @@ you should place your code here."
 
   ;; elscreen
   (setq elscreen-prefix-key (kbd "C-z"))
+  (setq elscreen-display-tab 8)
   (setq elscreen-tab-display-kill-screen nil) ;; not display [X]
   (setq elscreen-tab-display-control nil) ;; not display [<->]
   (elscreen-start)
