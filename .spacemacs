@@ -348,6 +348,10 @@ you should place your code here."
   (keyboard-translate ?\C-h ?\C-?)
 
 
+  ;; create new frame
+  (global-set-key "\M-n" 'make-frame)
+
+
   ;; load path
   (setq load-path
         (append (list nil
@@ -421,6 +425,7 @@ you should place your code here."
   (elscreen-create-internal)
   (set-face-background 'elscreen-tab-current-screen-face "#292B2E")
   (set-face-foreground 'elscreen-tab-current-screen-face "#BC6EC5")
+  (bind-key "k" 'elscreen-kill-screen-and-buffers elscreen-map)
 
 
   ;; neotree
@@ -462,7 +467,7 @@ you should place your code here."
   (setq dired-listing-switches "-alh --group-directories-first")
 
   ;; dired keybinding
-  (define-key dired-mode-map (kbd "C-o") 'dired-up-directory)
+  (define-key dired-mode-map (kbd "C-l") 'dired-up-directory)
 
   ;; open file in external application
   (define-key dired-mode-map (kbd "RET") 'dired-open-file)
@@ -496,6 +501,26 @@ you should place your code here."
   ;; (pdf-loader-install)
   ;; (pdf-loader-install)
   ;; (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
+
+
+  ;; elscreen + zsh
+  ;; https://uwabami.github.io/cc-env/Emacs.html
+  (defun return-current-working-directory-to-shell ()
+    (expand-file-name
+     (with-current-buffer
+         (if (featurep 'elscreen)
+             (let* ((frame-confs (elscreen-get-frame-confs (selected-frame)))
+                    (num (nth 1 (assoc 'screen-history frame-confs)))
+                    (cur-window-conf
+                     (assoc 'window-configuration
+                            (assoc num (assoc 'screen-property frame-confs))))
+                    (marker (nth 2 cur-window-conf)))
+               (marker-buffer marker))
+           (nth 1
+                (assoc 'buffer-list
+                       (nth 1 (nth 1 (current-frame-configuration))))))
+       default-directory)))
+
 
   ;; doc-annotate
   (setq doc-view-scale-internally nil)
