@@ -32,7 +32,9 @@ alias ecn='emacsclient -n'
 alias e='emacs -nw'
 # alias mew='emacs -e mew'
 alias mew='emacsclient -e "(elscreen-create)" && emacsclient -e "(mew)"'
-# alias cde='cd $(emacsclient -e "(return-current-working-directory-to-shell)" | sed 's/^"\(.*\)"$/\1/')'
+# alias cde='''cd $(emacsclient -e "(return-current-working-directory-to-shell)" | sed 's/^"\(.*\)"$/\1/')'''
+
+alias cde='cd $(emacsclient -e "(return-current-working-directory-to-shell)" | sed s/\"//g)'
 
 alias reload='exec $SHELL -l'
 alias cdl='cd $(ls -lt | grep ^d | awk '\''NR==1 {print $9}'\'')'
@@ -41,9 +43,3 @@ alias xrandr_800x600_HDMI='xrandr --output HDMI-1 --same-as eDP-1 --mode 800x600
 alias xrandr_1920x1080_DP='xrandr --output DP-1 --same-as eDP-1 --mode 1920x1080'
 alias xrandr_800x600_DP='xrandr --output DP-1 --same-as eDP-1 --mode 800x600'
 alias mozc='/usr/lib/mozc/mozc_tool --mode=config_dialog'
-
-function cde () {
-    EMACS_CWD=`emacsclient -e "(return-current-working-directory-to-shell)" | sed 's/^"\(.*\)"$/\1/'`
-    echo "cd $EMACS_CWD"
-    cd "$EMACS_CWD"
-}
