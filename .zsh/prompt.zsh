@@ -1,4 +1,5 @@
 PROMPT='%F{green}%n%f@%F{cyan}%m%f:%F{red}%d%f
+%# '
 
 # ブランチ名を色付きで表示させるメソッド
 function rprompt-git-current-branch {
