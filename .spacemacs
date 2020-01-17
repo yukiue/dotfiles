@@ -337,10 +337,10 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
 
-  (require 'server)
-  (unless (server-running-p)
-    (server-start))
-
+  ;; (require 'server)
+  ;; (unless (server-running-p)
+  ;;   (server-start))
+  (server-start)
 
   ;; (setq anaconda-mode-localhost-address "localhost")
 
