@@ -15,4 +15,8 @@ function history-all { history -E 1 }
 
 # bindkey "^g" ghq-fzf
 
-function chpwd() { ls }
+function chpwd() {
+    if [[ $(pwd) != $HOME ]]; then
+        ls
+    fi
+}
