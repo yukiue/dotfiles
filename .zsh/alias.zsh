@@ -44,3 +44,4 @@ alias xrandr_1920x1080_DP='xrandr --output DP-1 --same-as eDP-1 --mode 1920x1080
 alias xrandr_800x600_DP='xrandr --output DP-1 --same-as eDP-1 --mode 800x600'
 alias mozc='/usr/lib/mozc/mozc_tool --mode=config_dialog'
 alias ee='(){pidof emacs && ec $1 || emacs $1 &}'
+alias mupdf='(){mupdf $1 2> /dev/null}'
