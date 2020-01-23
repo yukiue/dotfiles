@@ -36,10 +36,10 @@ values."
      javascript
      octave
      graphviz
-     python
      (python :variables
              python-enable-yapf-format-on-save t
              python-sort-imports-on-save t
+             ;; python-backend 'lsp python-lsp-server 'mspyls
      )
      html
      ;; latex
@@ -353,6 +353,11 @@ you should place your code here."
   (global-set-key "\M-n" 'make-frame)
 
 
+  ;; initial buffer
+  (setq initial-buffer-choice t)
+  (switch-to-buffer "*scratch*")
+  
+
   ;; load path
   (setq load-path
         (append (list nil
@@ -423,10 +428,13 @@ you should place your code here."
   (setq elscreen-tab-display-kill-screen nil) ;; not display [X]
   (setq elscreen-tab-display-control nil) ;; not display [<->]
   (elscreen-start)
-  (elscreen-create-internal)
+  ;; (elscreen-create)
+  ;; (elscreen-create-internal)
   (set-face-background 'elscreen-tab-current-screen-face "#292B2E")
   (set-face-foreground 'elscreen-tab-current-screen-face "#BC6EC5")
-  (bind-key "k" 'elscreen-kill-screen-and-buffers elscreen-map)
+  ;; (bind-key "k" 'elscreen-kill-screen-and-buffers elscreen-map)
+  (define-key elscreen-map "\M-k"    'elscreen-kill)
+  (define-key elscreen-map "k" 'elscreen-kill-screen-and-buffers)
 
 
   ;; neotree
