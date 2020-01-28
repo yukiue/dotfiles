@@ -356,7 +356,7 @@ you should place your code here."
   ;; initial buffer
   (setq initial-buffer-choice t)
   (switch-to-buffer "*scratch*")
-  
+
 
   ;; load path
   (setq load-path
@@ -420,7 +420,8 @@ you should place your code here."
   ;; recentf
   (require 'recentf-ext)
   (global-set-key "\M-r" 'helm-recentf)
-
+  ;; (run-with-idle-timer 30 t '(lambda ()
+  ;;                              (with-suppressed-message (recentf-save-list))))
 
   ;; elscreen
   (setq elscreen-prefix-key (kbd "C-z"))
