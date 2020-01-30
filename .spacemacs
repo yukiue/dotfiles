@@ -36,11 +36,11 @@ values."
      javascript
      octave
      graphviz
-     (python :variables
-             python-enable-yapf-format-on-save t
-             python-sort-imports-on-save t
-             ;; python-backend 'lsp python-lsp-server 'mspyls
-     )
+     ;; (python :variables
+     ;;         python-enable-yapf-format-on-save t
+     ;;         python-sort-imports-on-save t
+     ;;         ;; python-backend 'lsp python-lsp-server 'mspyls
+     ;; )
      html
      ;; latex
      ;; ----------------------------------------------------------------
@@ -74,7 +74,8 @@ values."
      recentf-ext
      all-the-icons
      restart-emacs
-     pdf-tools
+     ;; pdf-tools
+     jedi
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -104,7 +105,7 @@ values."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https t
+   dotspacemacs-elpa-https nil
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    dotspacemacs-elpa-timeout 5
    ;; If non nil then spacemacs will check for updates at startup
@@ -326,6 +327,8 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
+  (add-hook 'python-mode-hook 'jedi:setup)
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -345,6 +348,7 @@ you should place your code here."
   ;; anaconda mode
   ;; (setq anaconda-mode-localhost-address "localhost")
 
+
   ;; delete backward char
   (keyboard-translate ?\C-h ?\C-?)
 
@@ -354,8 +358,10 @@ you should place your code here."
 
 
   ;; initial buffer
-  (setq initial-buffer-choice t)
-  (switch-to-buffer "*scratch*")
+  ;; FIXME: emacsを実行するとscratct,emacs FILEを実行するとFILEを開くようにする
+  ;; (setq initial-buffer-choice t)
+  ;; (setq inhibit-startup-screen nil)
+  ;; (switch-to-buffer "*scratch*")
 
 
   ;; load path
@@ -422,6 +428,7 @@ you should place your code here."
   (global-set-key "\M-r" 'helm-recentf)
   ;; (run-with-idle-timer 30 t '(lambda ()
   ;;                              (with-suppressed-message (recentf-save-list))))
+
 
   ;; elscreen
   (setq elscreen-prefix-key (kbd "C-z"))
@@ -553,7 +560,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (pdf-tools tablist company-anaconda anaconda-mode disaster company-c-headers cmake-mode clang-format elscreen-mew recentf-ext flyspell-correct-helm flyspell-correct auto-dictionary all-the-icons memoize async gnu-elpa-keyring-update vimrc-mode dactyl-mode company-auctex auctex-latexmk auctex powerline spinner parent-mode pkg-info epl flx highlight iedit anzu f s popup dash mozc hydra lv projectile avy smartparens evil helm helm-core prettier-js elscreen yapfify web-mode web-beautify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc hy-mode helm-pydoc helm-css-scss haml-mode graphviz-dot-mode emmet-mode cython-mode csv-mode company-web web-completion-data company-tern dash-functional tern company-anac onda coffee-mode pythonic smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (jedi jedi-core python-environment epc ctable concurrent deferred pdf-tools tablist company-anaconda anaconda-mode disaster company-c-headers cmake-mode clang-format elscreen-mew recentf-ext flyspell-correct-helm flyspell-correct auto-dictionary all-the-icons memoize async gnu-elpa-keyring-update vimrc-mode dactyl-mode company-auctex auctex-latexmk auctex powerline spinner parent-mode pkg-info epl flx highlight iedit anzu f s popup dash mozc hydra lv projectile avy smartparens evil helm helm-core prettier-js elscreen yapfify web-mode web-beautify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc hy-mode helm-pydoc helm-css-scss haml-mode graphviz-dot-mode emmet-mode cython-mode csv-mode company-web web-completion-data company-tern dash-functional tern company-anac onda coffee-mode pythonic smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
