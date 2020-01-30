@@ -7,3 +7,11 @@ cd ~/.dotfiles
 chmod +x install.sh
 ./install.sh
 ```
+## list
+- X Window System
+- xpywm
+- zsh
+- emacs
+- spacemacs
+- vim
+- tmux
