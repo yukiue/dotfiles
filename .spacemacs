@@ -422,6 +422,13 @@ you should place your code here."
   (setq mew-prog-pdf-ext '("mupdf" ()t))
   (setq mew-prog-image/*-ext '("mupdf" ()t))
   (setq mew-prog-postscript '("gv" ()t))
+  (setq mew-prog-msword-ext "xdg-open")
+  (setq mew-prog-msexcel-ext "xdg-open")
+  (setq mew-prog-mspowerpoint-ext "xdg-open")
+  ;; (setq mew-summary-form
+  ;;       '(type (5 date) " " (5 time) " " (-4 size) " " (9 from) " " t (30 subj) "|" (0 body)))
+  ;; (setq mew-use-full-window t)
+  ;; (setq mew-theme-file "~/.mew-theme.el")
 
 
   ;; recentf
