@@ -497,7 +497,7 @@ you should place your code here."
 
 
   ;; dired list
-  (setq dired-listing-switches "-alh --group-directories-first")
+  (setq dired-listing-switches "-Alh --group-directories-first")
 
   ;; dired keybinding
   (define-key dired-mode-map (kbd "C-l") 'dired-up-directory)
