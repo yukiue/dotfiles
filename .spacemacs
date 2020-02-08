@@ -354,6 +354,13 @@ you should place your code here."
   (keyboard-translate ?\C-h ?\C-?)
 
 
+  ;; windmove
+  (global-set-key (kbd "C-c <left>") 'windmove-left)
+  (global-set-key (kbd "C-c <down>") 'windmove-down)
+  (global-set-key (kbd "C-c <up>") 'windmove-up)
+  (global-set-key (kbd "C-c <right>") 'windmove-right)
+
+
   ;; create new frame
   (global-set-key "\M-n" 'make-frame)
 
@@ -417,11 +424,11 @@ you should place your code here."
   (setq mew-imap-size 100000000) ;; 100MB
   (setq mew-use-cached-passwd t)
   (setq mew-signature-insert-last t)
-  (setq mew-save-dir "/tmp")
+  (setq mew-save-dir "~/tmp/mail")
   ;; C-c C-e settings
-  (setq mew-prog-pdf-ext '("mupdf" ()t))
-  (setq mew-prog-image/*-ext '("mupdf" ()t))
-  (setq mew-prog-postscript '("gv" ()t))
+  (setq mew-prog-pdf-ext "mupdf")
+  (setq mew-prog-image/*-ext "mupdf")
+  (setq mew-prog-postscript "gv")
   (setq mew-prog-msword-ext "xdg-open")
   (setq mew-prog-msexcel-ext "xdg-open")
   (setq mew-prog-mspowerpoint-ext "xdg-open")
