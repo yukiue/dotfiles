@@ -22,8 +22,8 @@ alias x='startx'
 alias open='xdg-open'
 
 
-# basic alias
-alias rm='rm -i'
+# basic aliases
+alias rm='rm -ir'
 alias mv='mv -i'
 alias cp='cp -i'
 alias grep='grep --color=auto'
