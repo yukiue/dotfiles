@@ -408,7 +408,7 @@ you should place your code here."
 
   ;; org to pdf
   (setq org-latex-pdf-process
-        '("uplatex %b.tex" "uplatex %b.tex" "dvipdfmx %b.dvi"))
+        '("uplatex %b.tex" "uplatex %b.tex" "dvipdfmx %b.dvi" "rm -f %b.dvi %b.tex"))
 
 
   ;; open file after export
@@ -561,6 +561,28 @@ you should place your code here."
   (autoload 'doc-annotate-add-annotation "doc-annotate")
   (add-to-list 'auto-mode-alist '("\\.ant$" . doc-annotate-mode))
 
+
+  ;; insert-comment
+  (global-set-key "\C-cD" 'insert-modification-notice)
+  (defun insert-modification-notice ()
+    "Insert today's date followed by your full name at the current point
+  as a comment."
+    (interactive)
+    (cond ((or (eq major-mode 'latex-mode)
+               (eq major-mode 'outline-mode))
+           (save-excursion
+             (insert (format "%%  -%s [" (user-login-name))
+                     (format-time-string "%Y/%m/%d")
+                     "]\n"))
+           (forward-char 2))
+          (t
+           (insert (format "%s%s, %s by %s%s"
+                           (comment-start-with-space)
+                           (substring (current-time-string) 4 10)
+                           (substring (current-time-string) -4)
+                           (user-full-name)
+                           (or comment-end "")))
+           (indent-according-to-mode))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
