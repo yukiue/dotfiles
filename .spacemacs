@@ -427,7 +427,7 @@ you should place your code here."
   (global-set-key "\C-xm" 'mew)
   (setq mew-imap-size 100000000) ;; 100MB
   (setq mew-use-cached-passwd t)
-  (setq mew-signature-insert-lastpart t)
+  (setq mew-signature-insert-last t)
   (setq mew-save-dir "~/tmp/mail")
   (setq mew-use-suffix t)
   (defun mew-summary-form-dow ()
@@ -441,9 +441,9 @@ you should place your code here."
        ((string= s "Fri") "金")
        ((string= s "Sat") "土")
        ((string= s "Sun") "日")
-       (t "??"))))
+       (t "？"))))
   (setq mew-summary-form
-        '(type (5 date) "(" (2 dow) ")" (5 time) " | " (15 from) " | " t (0 body)))`
+        '(type (5 date) "(" (2 dow) ")" (5 time) " | " (15 from) " | " t (0 body)))
   (setq mew-summary-form-extract-rule '(address))
   ;; mew-summary-execute-external (C-c C-e)
   (setq mew-prog-pdf-ext "mupdf")
@@ -452,6 +452,7 @@ you should place your code here."
   (setq mew-prog-msword-ext "xdg-open")
   (setq mew-prog-msexcel-ext "xdg-open")
   (setq mew-prog-mspowerpoint-ext "xdg-open")
+  ;; biff
   (setq mew-use-biff t)
   (setq mew-pop-biff-interval 30)
   (setq mew-use-biff-bell t)
