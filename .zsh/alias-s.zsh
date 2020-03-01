@@ -1,4 +1,4 @@
-alias -s org='emacs'
+alias -s org='e'
 alias -s py='python3'
 alias -s pdf='mupdf'
 alias -s {eps,ps}='evince'
