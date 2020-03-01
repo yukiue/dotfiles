@@ -427,17 +427,9 @@ you should place your code here."
   (global-set-key "\C-xm" 'mew)
   (setq mew-imap-size 100000000) ;; 100MB
   (setq mew-use-cached-passwd t)
-  (setq mew-signature-insert-last t)
+  (setq mew-signature-insert-lastpart t)
   (setq mew-save-dir "~/tmp/mail")
-  (setq mew-mail-path "~/mail")
-  (setq mew-conf-path mew-mail-path)
-  ;; C-c C-e settings
-  (setq mew-prog-pdf-ext "mupdf")
-  (setq mew-prog-image/*-ext "mupdf")
-  (setq mew-prog-postscript "evince")
-  (setq mew-prog-msword-ext "xdg-open")
-  (setq mew-prog-msexcel-ext "xdg-open")
-  (setq mew-prog-mspowerpoint-ext "xdg-open")
+  (setq mew-use-suffix t)
   (defun mew-summary-form-dow ()
     (let ((s (MEW-DATE)))
       (if (>= (length s) 3) (setq s (substring s 0 3)))
@@ -451,11 +443,27 @@ you should place your code here."
        ((string= s "Sun") "日")
        (t "??"))))
   (setq mew-summary-form
-        '(type (5 date) "(" (2 dow) ")" (5 time) " | " (15 from) " | " t (0 body)))
+        '(type (5 date) "(" (2 dow) ")" (5 time) " | " (15 from) " | " t (0 body)))`
   (setq mew-summary-form-extract-rule '(address))
-  (setq mew-use-full-window t)
+  ;; mew-summary-execute-external (C-c C-e)
+  (setq mew-prog-pdf-ext "mupdf")
+  (setq mew-prog-image/*-ext "mupdf")
+  (setq mew-prog-postscript "evince")
+  (setq mew-prog-msword-ext "xdg-open")
+  (setq mew-prog-msexcel-ext "xdg-open")
+  (setq mew-prog-mspowerpoint-ext "xdg-open")
+  ;; 自動でメール確認
+  (setq mew-use-biff t)
+	;; メールをチェックしに行く間隔(分)
+  (setq mew-pop-biff-interval 30)
+	;; メールが来た時にベルを鳴らす
+  (setq mew-use-biff-bell t)
+  ;; (setq mew-mail-path "~/mail")
+  ;; (setq mew-conf-path mew-mail-path)
+  ;; (setq mew-use-full-window t)
   ;; (setq mew-theme-file "~/.mew-theme.el")
-
+  ;; (setq mew-use-fancy-thread t)
+  ;; (setq mew-use-thread-separator t)
 
   ;; recentf
   (require 'recentf-ext)
