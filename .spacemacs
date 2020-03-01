@@ -451,7 +451,7 @@ you should place your code here."
        ((string= s "Sun") "日")
        (t "??"))))
   (setq mew-summary-form
-        '(type (5 date) "(" (2 dow) ")" (5 time) " | " (14 from) " | " t (0 body)))
+        '(type (5 date) "(" (2 dow) ")" (5 time) " | " (15 from) " | " t (0 body)))
   (setq mew-summary-form-extract-rule '(address))
   (setq mew-use-full-window t)
   ;; (setq mew-theme-file "~/.mew-theme.el")
