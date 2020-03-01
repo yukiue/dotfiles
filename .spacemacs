@@ -69,6 +69,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(
+     mew
      mozc
      prettier-js
      elscreen
@@ -428,16 +429,31 @@ you should place your code here."
   (setq mew-use-cached-passwd t)
   (setq mew-signature-insert-last t)
   (setq mew-save-dir "~/tmp/mail")
+  (setq mew-mail-path "~/mail")
+  (setq mew-conf-path mew-mail-path)
   ;; C-c C-e settings
   (setq mew-prog-pdf-ext "mupdf")
   (setq mew-prog-image/*-ext "mupdf")
-  (setq mew-prog-postscript "gv")
+  (setq mew-prog-postscript "evince")
   (setq mew-prog-msword-ext "xdg-open")
   (setq mew-prog-msexcel-ext "xdg-open")
   (setq mew-prog-mspowerpoint-ext "xdg-open")
-  ;; (setq mew-summary-form
-  ;;       '(type (5 date) " " (5 time) " " (-4 size) " " (9 from) " " t (30 subj) "|" (0 body)))
-  ;; (setq mew-use-full-window t)
+  (defun mew-summary-form-dow ()
+    (let ((s (MEW-DATE)))
+      (if (>= (length s) 3) (setq s (substring s 0 3)))
+      (cond
+       ((string= s "Mon") "月")
+       ((string= s "Tue") "火")
+       ((string= s "Wed") "水")
+       ((string= s "Thu") "木")
+       ((string= s "Fri") "金")
+       ((string= s "Sat") "土")
+       ((string= s "Sun") "日")
+       (t "??"))))
+  (setq mew-summary-form
+        '(type (5 date) "(" (2 dow) ")" (5 time) " | " (14 from) " | " t (0 body)))
+  (setq mew-summary-form-extract-rule '(address))
+  (setq mew-use-full-window t)
   ;; (setq mew-theme-file "~/.mew-theme.el")
 
 
@@ -593,7 +609,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (undo-tree jedi jedi-core python-environment epc ctable concurrent deferred pdf-tools tablist company-anaconda anaconda-mode disaster company-c-headers cmake-mode clang-format elscreen-mew recentf-ext flyspell-correct-helm flyspell-correct auto-dictionary all-the-icons memoize async gnu-elpa-keyring-update vimrc-mode dactyl-mode company-auctex auctex-latexmk auctex powerline spinner parent-mode pkg-info epl flx highlight iedit anzu f s popup dash mozc hydra lv projectile avy smartparens evil helm helm-core prettier-js elscreen yapfify web-mode web-beautify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc hy-mode helm-pydoc helm-css-scss haml-mode graphviz-dot-mode emmet-mode cython-mode csv-mode company-web web-completion-data company-tern dash-functional tern company-anac onda coffee-mode pythonic smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (mew undo-tree jedi jedi-core python-environment epc ctable concurrent deferred pdf-tools tablist company-anaconda anaconda-mode disaster company-c-headers cmake-mode clang-format elscreen-mew recentf-ext flyspell-correct-helm flyspell-correct auto-dictionary all-the-icons memoize async gnu-elpa-keyring-update vimrc-mode dactyl-mode company-auctex auctex-latexmk auctex powerline spinner parent-mode pkg-info epl flx highlight iedit anzu f s popup dash mozc hydra lv projectile avy smartparens evil helm helm-core prettier-js elscreen yapfify web-mode web-beautify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc hy-mode helm-pydoc helm-css-scss haml-mode graphviz-dot-mode emmet-mode cython-mode csv-mode company-web web-completion-data company-tern dash-functional tern company-anac onda coffee-mode pythonic smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
