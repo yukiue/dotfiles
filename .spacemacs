@@ -452,18 +452,10 @@ you should place your code here."
   (setq mew-prog-msword-ext "xdg-open")
   (setq mew-prog-msexcel-ext "xdg-open")
   (setq mew-prog-mspowerpoint-ext "xdg-open")
-  ;; 自動でメール確認
   (setq mew-use-biff t)
-	;; メールをチェックしに行く間隔(分)
   (setq mew-pop-biff-interval 30)
-	;; メールが来た時にベルを鳴らす
   (setq mew-use-biff-bell t)
-  ;; (setq mew-mail-path "~/mail")
-  ;; (setq mew-conf-path mew-mail-path)
-  ;; (setq mew-use-full-window t)
-  ;; (setq mew-theme-file "~/.mew-theme.el")
-  ;; (setq mew-use-fancy-thread t)
-  ;; (setq mew-use-thread-separator t)
+
 
   ;; recentf
   (require 'recentf-ext)
