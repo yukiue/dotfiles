@@ -7,4 +7,4 @@ done
 bindkey -e
 
 # pip completion
-eval "`pip completion --zsh`"
+eval "`pip3 completion --zsh`"
