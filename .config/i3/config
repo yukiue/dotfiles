@@ -170,5 +170,14 @@ bar {
         status_command i3status
 }
 
-# chromium
-bindsym Mod1+Control+1 exec chromium 2> /dev/null
+# execute emacs
+bindsym Mod1+Control+2 exec emacs
+
+# execute chromium
+bindsym Mod1+Control+3 exec chromium 2> /dev/null
+
+# execute xrandr
+bindsym Mod1+Control+8 exec xrandr --output DP-1 --same-as eDP-1 --mode 1920x1080
+
+# access fserv
+bindsym Mod1+Control+0 exec tmux new-window -n:fserv "ssh fserv"
