@@ -454,7 +454,7 @@ you should place your code here."
   (setq mew-prog-mspowerpoint-ext "xdg-open")
   ;; biff
   (setq mew-use-biff t)
-  (setq mew-pop-biff-interval 30)
+  (setq mew-imap-biff-interval 5)
   (setq mew-use-biff-bell t)
 
 
