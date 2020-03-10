@@ -480,6 +480,14 @@ you should place your code here."
   (define-key elscreen-map "k" 'elscreen-kill-screen-and-buffers)
 
 
+  ;; elscreen-helm-recenf
+  (global-set-key "\C-z\M-r" 'elscreen-helm-recentf)
+  (defun elscreen-helm-recentf ()
+    (interactive)
+    (elscreen-create)
+    (helm-recentf))
+
+
   ;; neotree
   (require 'neotree)
   (global-set-key "\C-xn" 'neotree-toggle)
@@ -599,6 +607,7 @@ you should place your code here."
                            (user-full-name)
                            (or comment-end "")))
            (indent-according-to-mode))))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
