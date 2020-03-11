@@ -6,7 +6,7 @@ xset r rate 200 40
 
 xpywm 2>/tmp/xpywm.log &
 xpymon 2>/tmp/xwpymon.log &
-xpylog 2>/tmp/xpylog.log &
+# xpylog 2>/tmp/xpylog.log &
 
 export DefaultImModule=fcitx
 export GTK_IM_MODULE=fcitx
