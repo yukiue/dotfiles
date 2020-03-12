@@ -361,6 +361,9 @@ you should place your code here."
   (global-set-key (kbd "C-c <right>") 'windmove-right)
 
 
+  ;; window layout toggle
+  (global-set-key (kbd "C-c E") 'spacemacs/window-layout-toggle)
+
   ;; create new frame
   (global-set-key "\M-n" 'make-frame)
 
@@ -453,9 +456,9 @@ you should place your code here."
   (setq mew-prog-msexcel-ext "xdg-open")
   (setq mew-prog-mspowerpoint-ext "xdg-open")
   ;; biff
-  (setq mew-use-biff t)
-  (setq mew-imap-biff-interval 5)
-  (setq mew-use-biff-bell t)
+  ;; (setq mew-use-biff t)
+  ;; (setq mew-imap-biff-interval 5)
+  ;; (setq mew-use-biff-bell t)
 
 
   ;; recentf
@@ -478,6 +481,14 @@ you should place your code here."
   ;; (bind-key "k" 'elscreen-kill-screen-and-buffers elscreen-map)
   (define-key elscreen-map "\M-k"    'elscreen-kill)
   (define-key elscreen-map "k" 'elscreen-kill-screen-and-buffers)
+
+
+  ;; elscreen-helm-recenf
+  (global-set-key "\C-z\M-r" 'elscreen-helm-recentf)
+  (defun elscreen-helm-recentf ()
+    (interactive)
+    (elscreen-create)
+    (helm-recentf))
 
 
   ;; neotree
@@ -599,6 +610,7 @@ you should place your code here."
                            (user-full-name)
                            (or comment-end "")))
            (indent-according-to-mode))))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
