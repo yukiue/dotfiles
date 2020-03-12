@@ -361,6 +361,9 @@ you should place your code here."
   (global-set-key (kbd "C-c <right>") 'windmove-right)
 
 
+  ;; window layout toggle
+  (global-set-key (kbd "C-c E") 'spacemacs/window-layout-toggle)
+
   ;; create new frame
   (global-set-key "\M-n" 'make-frame)
 
