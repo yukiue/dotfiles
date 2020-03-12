@@ -364,15 +364,16 @@ you should place your code here."
   ;; window layout toggle
   (global-set-key (kbd "C-c E") 'spacemacs/window-layout-toggle)
 
+
   ;; create new frame
   (global-set-key "\M-n" 'make-frame)
 
 
   ;; initial buffer
-  ;; FIXME: emacsを実行するとscratct,emacs FILEを実行するとFILEを開くようにする
-  ;; (setq initial-buffer-choice t)
-  ;; (setq inhibit-startup-screen nil)
   ;; (switch-to-buffer "*scratch*")
+  ;; (defun spacemacs-buffer/goto-buffer ()
+  ;;   (interactive))
+  (setq inhibit-startup-screen t)
 
 
   ;; load path
