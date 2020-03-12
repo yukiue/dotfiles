@@ -373,7 +373,7 @@ you should place your code here."
   ;; (switch-to-buffer "*scratch*")
   ;; (defun spacemacs-buffer/goto-buffer ()
   ;;   (interactive))
-  (setq inhibit-startup-screen t)
+  ;; (setq inhibit-startup-screen t)
 
 
   ;; load path
