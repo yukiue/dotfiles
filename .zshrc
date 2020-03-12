@@ -3,7 +3,7 @@ do
     source $file
 done
 
-#keybind like emacs
+# keybind like emacs
 bindkey -e
 
 # pip completion
