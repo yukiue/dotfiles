@@ -37,14 +37,13 @@ alias pbpaste='xsel --clipboard --output'
 
 
 # emacs
-alias ec='emacsclient'
-alias ee='emacs -nw'
-# alias oemacs='emacs -q'
+alias ew='emacs -nw'
+alias ow='emacs -q -nw'
 alias oemacs='emacs -q -l ~/.emacs.conf'
+alias ec='emacsclient'
 alias en='emacsclient -n'
 alias e='emacsclient -e "(elscreen-create)" > /dev/null && emacsclient -n'
 # alias e='(){pidof emacs > /dev/null && ecn $1 || emacs $1 &}'
-alias mew='emacsclient -e "(elscreen-create)" && emacsclient -e "(mew)"'
 alias cde='cd $(emacsclient -e "(return-current-working-directory-to-shell)" | sed s/\"//g)'
 
 
