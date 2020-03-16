@@ -38,11 +38,11 @@ values."
      javascript
      octave
      graphviz
-     ;; (python :variables
-     ;;         python-enable-yapf-format-on-save t
-     ;;         python-sort-imports-on-save t
-     ;;         ;; python-backend 'lsp python-lsp-server 'mspyls
-     ;; )
+     (python :variables
+             ;; python-enable-yapf-format-on-save t
+             python-sort-imports-on-save t
+             ;; python-backend 'lsp python-lsp-server 'mspyls
+     )
      html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
