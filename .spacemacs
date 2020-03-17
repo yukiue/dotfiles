@@ -39,7 +39,7 @@ values."
      octave
      graphviz
      (python :variables
-             ;; python-enable-yapf-format-on-save t
+             python-enable-yapf-format-on-save t
              python-sort-imports-on-save t
              ;; python-backend 'lsp python-lsp-server 'mspyls
      )
@@ -475,7 +475,7 @@ you should place your code here."
   (setq elscreen-tab-display-kill-screen nil) ;; not display [X]
   (setq elscreen-tab-display-control nil) ;; not display [<->]
   (elscreen-start)
-  ;; (elscreen-create)
+  (elscreen-create)
   ;; (elscreen-create-internal)
   (set-face-background 'elscreen-tab-current-screen-face "#292B2E")
   (set-face-foreground 'elscreen-tab-current-screen-face "#BC6EC5")
