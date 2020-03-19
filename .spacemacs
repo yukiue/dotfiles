@@ -492,6 +492,14 @@ you should place your code here."
     (helm-recentf))
 
 
+  ;; elscreen-mew
+  (global-set-key "\C-zm" 'elscreen-mew)
+  (defun elscreen-mew ()
+    (interactive)
+    (elscreen-create)
+    (mew))
+
+
   ;; neotree
   (require 'neotree)
   (global-set-key "\C-xn" 'neotree-toggle)
