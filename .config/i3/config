@@ -188,6 +188,10 @@ bindsym Mod1+Control+0 exec tmux new-window -n:fserv "ssh fserv"
 # screen lock
 bindsym $mod+backslash exec i3lock-fancy
 
+# screen capture
+bindsym --release Print exec scrot ~/pictures/screeenshot_%Y%m%d_%H%M%S.png
+bindsym --release Shift+Print exec scrot -u ~/pictures/screeenshot_%Y%m%d_%H%M%S.png
+
 # startup
 exec urxvt -e tmux
 
