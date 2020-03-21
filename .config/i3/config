@@ -170,14 +170,26 @@ bar {
         status_command i3status
 }
 
+# execute terminal
+bindsym Mod1+Control+1 exec urxvt -e tmux
+
 # execute emacs
 bindsym Mod1+Control+2 exec emacs
 
 # execute chromium
-bindsym Mod1+Control+3 exec chromium 2> /dev/null
+bindsym Mod1+Control+3 exec chromium
 
 # execute xrandr
-bindsym Mod1+Control+8 exec xrandr --output DP-1 --same-as eDP-1 --mode 1920x1080
+bindsym Mod1+Control+8 exec xrandr --output HDMI-2 --same-as eDP-1 --mode 1920x1080
 
 # access fserv
 bindsym Mod1+Control+0 exec tmux new-window -n:fserv "ssh fserv"
+
+# screen lock
+bindsym $mod+backslash exec i3lock-fancy
+
+# startup
+exec urxvt -e tmux
+
+# wallpaper
+exec --no-startup-id feh --randomize --bg-scale $HOME/.config/i3/wallpapers/*
