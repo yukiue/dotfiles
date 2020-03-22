@@ -38,11 +38,11 @@ values."
      javascript
      octave
      graphviz
-     ;; (python :variables
-     ;;         python-enable-yapf-format-on-save t
-     ;;         python-sort-imports-on-save t
-     ;;         ;; python-backend 'lsp python-lsp-server 'mspyls
-     ;; )
+     (python :variables
+             python-enable-yapf-format-on-save t
+             python-sort-imports-on-save t
+             ;; python-backend 'lsp python-lsp-server 'mspyls
+     )
      html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -373,7 +373,7 @@ you should place your code here."
   ;; (switch-to-buffer "*scratch*")
   ;; (defun spacemacs-buffer/goto-buffer ()
   ;;   (interactive))
-  ;; (setq inhibit-startup-screen t)
+  (setq inhibit-startup-screen t)
 
 
   ;; load path
@@ -475,7 +475,7 @@ you should place your code here."
   (setq elscreen-tab-display-kill-screen nil) ;; not display [X]
   (setq elscreen-tab-display-control nil) ;; not display [<->]
   (elscreen-start)
-  ;; (elscreen-create)
+  (elscreen-create)
   ;; (elscreen-create-internal)
   (set-face-background 'elscreen-tab-current-screen-face "#292B2E")
   (set-face-foreground 'elscreen-tab-current-screen-face "#BC6EC5")
@@ -490,6 +490,14 @@ you should place your code here."
     (interactive)
     (elscreen-create)
     (helm-recentf))
+
+
+  ;; elscreen-mew
+  (global-set-key "\C-zm" 'elscreen-mew)
+  (defun elscreen-mew ()
+    (interactive)
+    (elscreen-create)
+    (mew))
 
 
   ;; neotree
