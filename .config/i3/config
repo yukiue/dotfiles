@@ -172,19 +172,19 @@ bar {
 }
 
 
-# execute terminal
+# terminal
 bindsym Mod1+Control+1 exec urxvt -e tmux
 
-# execute emacs
+# emacs
 bindsym Mod1+Control+2 exec emacs
 
-# execute chromium
+# chromium
 bindsym Mod1+Control+3 exec chromium
 
-# execute xrandr
+# xrandr
 bindsym Mod1+Control+8 exec xrandr --output HDMI-2 --same-as eDP-1 --mode 1920x1080
 
-# access fserv
+# ssh
 bindsym Mod1+Control+0 exec tmux new-window -n:fserv "ssh fserv"
 
 # screen lock
@@ -195,9 +195,9 @@ bindsym --release Print exec scrot ~/pictures/screeenshot_%Y%m%d_%H%M%S.png
 bindsym --release Shift+Print exec scrot -u ~/pictures/screeenshot_%Y%m%d_%H%M%S.png
 
 # startup
-exec --no-startup-id volumeicon
-exec --no-startup-id compton -cbm 0.75
 exec urxvt -e tmux
+exec --no-startup-id volumeicon
+exec --no-startup-id compton -f
 
 # wallpaper
 exec --no-startup-id feh --randomize --bg-scale $HOME/.config/i3/wallpapers/*
