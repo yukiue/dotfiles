@@ -373,7 +373,8 @@ you should place your code here."
   ;; (switch-to-buffer "*scratch*")
   ;; (defun spacemacs-buffer/goto-buffer ()
   ;;   (interactive))
-  (setq inhibit-startup-screen t)
+  ;; (setq inhibit-startup-screen t)
+  ;; (setq initial-buffer-choice nil)
 
 
   ;; load path
@@ -471,9 +472,7 @@ you should place your code here."
 
   ;; elscreen
   (setq elscreen-prefix-key (kbd "C-z"))
-  (setq elscreen-display-tab 8)
-  (setq elscreen-tab-display-kill-screen nil) ;; not display [X]
-  (setq elscreen-tab-display-control nil) ;; not display [<->]
+  (setq elscreen-display-tab nil)
   (elscreen-start)
   (elscreen-create)
   ;; (elscreen-create-internal)
@@ -482,6 +481,31 @@ you should place your code here."
   ;; (bind-key "k" 'elscreen-kill-screen-and-buffers elscreen-map)
   (define-key elscreen-map "\M-k"    'elscreen-kill)
   (define-key elscreen-map "k" 'elscreen-kill-screen-and-buffers)
+
+
+  ;; elscreen tab
+  ;; get-alist was removed somewhere along the line
+  ;; You can try substituting all instances of get-alist with assoc-default
+  ;; instead of using defalias and see if that works; I haven't tried.
+  (defalias 'get-alist 'assoc-default) ; get-alist is gone
+
+  ;; Put tabs display in your frame title bar instead.
+  (defun elscreen-frame-title-update ()
+    (when (elscreen-screen-modified-p 'elscreen-frame-title-update)
+      (let* ((screen-list (sort (elscreen-get-screen-list) '<))
+             (screen-to-name-alist (elscreen-get-screen-to-name-alist))
+             (title (concat "| " (mapconcat
+                                  (lambda (screen)
+                                    (format "%d%s %s |"
+                                            screen (elscreen-status-label screen)
+                                            (get-alist screen screen-to-name-alist)))
+                                  screen-list " "))))
+        (if (fboundp 'set-frame-name)
+            (set-frame-name title)
+          (setq frame-title-format title)))))
+
+  (eval-after-load "elscreen"
+    '(add-hook 'elscreen-screen-update-hook 'elscreen-frame-title-update))
 
 
   ;; elscreen-helm-recenf
