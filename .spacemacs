@@ -487,7 +487,7 @@ you should place your code here."
   (global-set-key "\C-c\C-y" 'lookup-pattern)
   (setq lookup-search-agents
         '(
-          (ndeb "~/var/dic/epwing")
+          (ndeb "~/var/dict/epwing")
           ))
   (setq lookup-default-dictionary-options
         '((:stemmer .  stem-english)))
