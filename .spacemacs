@@ -448,11 +448,14 @@ you should place your code here."
   (global-set-key "\M-r" 'helm-recentf)
 
 
+  ;; evil
+  (define-key evil-emacs-state-map (kbd "C-z") nil)
+
+
   ;; elscreen
   (setq elscreen-prefix-key (kbd "C-z"))
   (setq elscreen-display-tab nil)
   (elscreen-start)
-  (elscreen-create)
   (set-face-background 'elscreen-tab-current-screen-face "#292B2E")
   (set-face-foreground 'elscreen-tab-current-screen-face "#BC6EC5")
   (define-key elscreen-map "\M-k"    'elscreen-kill)
