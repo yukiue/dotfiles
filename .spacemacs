@@ -341,14 +341,6 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;; server
-  ;; (server-start)
-  ;; (unless (server-running-p)
-  ;;   (server-start))
-
-  ;; anaconda mode
-  ;; (setq anaconda-mode-localhost-address "localhost")
-
 
   ;; delete backward char
   (keyboard-translate ?\C-h ?\C-?)
@@ -367,14 +359,6 @@ you should place your code here."
 
   ;; create new frame
   (global-set-key "\M-n" 'make-frame)
-
-
-  ;; initial buffer
-  ;; (switch-to-buffer "*scratch*")
-  ;; (defun spacemacs-buffer/goto-buffer ()
-  ;;   (interactive))
-  ;; (setq inhibit-startup-screen t)
-  ;; (setq initial-buffer-choice nil)
 
 
   ;; load path
@@ -457,17 +441,11 @@ you should place your code here."
   (setq mew-prog-msword-ext "xdg-open")
   (setq mew-prog-msexcel-ext "xdg-open")
   (setq mew-prog-mspowerpoint-ext "xdg-open")
-  ;; biff
-  ;; (setq mew-use-biff t)
-  ;; (setq mew-imap-biff-interval 5)
-  ;; (setq mew-use-biff-bell t)
 
 
   ;; recentf
   (require 'recentf-ext)
   (global-set-key "\M-r" 'helm-recentf)
-  ;; (run-with-idle-timer 30 t '(lambda ()
-  ;;                              (with-suppressed-message (recentf-save-list))))
 
 
   ;; elscreen
@@ -475,10 +453,8 @@ you should place your code here."
   (setq elscreen-display-tab nil)
   (elscreen-start)
   (elscreen-create)
-  ;; (elscreen-create-internal)
   (set-face-background 'elscreen-tab-current-screen-face "#292B2E")
   (set-face-foreground 'elscreen-tab-current-screen-face "#BC6EC5")
-  ;; (bind-key "k" 'elscreen-kill-screen-and-buffers elscreen-map)
   (define-key elscreen-map "\M-k"    'elscreen-kill)
   (define-key elscreen-map "k" 'elscreen-kill-screen-and-buffers)
 
