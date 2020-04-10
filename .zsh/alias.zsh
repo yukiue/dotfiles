@@ -54,8 +54,6 @@ alias xrandr_1920x1080_DP='xrandr --output DP-1 --same-as eDP-1 --mode 1920x1080
 
 # misc
 alias mozc='/usr/lib/mozc/mozc_tool --mode=config_dialog'
-alias mupdf='(){mupdf $1 2> /dev/null}'
-# alias chromium='(){chromium $1 2> /dev/null }'
 alias utf8='nkf -w --overwrite'
 alias range='(){head -$2 | tail -`expr $2 - $1 + 1`}'
 alias localhost='python -m http.server'
