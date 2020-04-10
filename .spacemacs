@@ -384,6 +384,7 @@ you should place your code here."
   (setq pangu-spacing-real-insert-separtor t)
   ;; (add-hook 'text-mode-hook 'pangu-spacing-mode)
 
+  
   ;; follow symbolic link
   (setq vc-follow-symlinks t)
 
@@ -494,7 +495,9 @@ you should place your code here."
   (setq lookup-search-agents
         '(
           (ndeb "~/var/dict/super1997")
-          (ndeb "~/var/dict/Wikip_ja20200301_Lite/EPWING")
+          (ndeb "~/var/dict/super2007")
+          (ndeb "~/var/dict/wikip_ja_lite_20200301/EPWING")
+          (ndeb "~/var/dict/wikip_en_simple_20200120/EPWING")
           ))
   (setq lookup-default-dictionary-options
         '((:stemmer .  stem-english)))
