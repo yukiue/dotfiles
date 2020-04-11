@@ -503,6 +503,20 @@ you should place your code here."
     (mew))
 
 
+  ;; lookup
+  (setq lookup-enable-splash nil)
+  (autoload 'lookup "lookup" nil t)
+  (autoload 'lookup-region "lookup" nil t)
+  (autoload 'lookup-pattern "lookup" nil t)
+  (global-set-key "\C-c\C-l" 'lookup)
+  (global-set-key "\C-cy" 'lookup-region)
+  (global-set-key "\C-c\C-y" 'lookup-pattern)
+  (setq lookup-default-dictionary-options
+        '((:stemmer .  stem-english)))
+  (setq lookup-use-kakasi nil)
+  (setq lookup-init-file "~/.lookup.el")
+
+
   ;; neotree
   (require 'neotree)
   (global-set-key "\C-xn" 'neotree-toggle)
