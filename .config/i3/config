@@ -172,6 +172,10 @@ bar {
 }
 
 
+# move to workspace
+bindsym $mod+p workspace prev
+bindsym $mod+n workspace next
+
 # terminal
 bindsym Mod1+Control+1 exec urxvt -e tmux
 
