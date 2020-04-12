@@ -346,6 +346,10 @@ you should place your code here."
   (keyboard-translate ?\C-h ?\C-?)
 
 
+  ;; mark set
+  (global-set-key (kbd "C-\\") 'set-mark-command)
+  (global-unset-key (kbd "C-SPC"))
+
   ;; windmove
   (global-set-key (kbd "C-c <left>") 'windmove-left)
   (global-set-key (kbd "C-c <down>") 'windmove-down)
@@ -387,8 +391,8 @@ you should place your code here."
 
 
   ;; mozc
-  (require 'mozc)
-  (setq default-input-method "japanese-mozc")
+  ;; (require 'mozc)
+  ;; (setq default-input-method "japanese-mozc")
 
 
   ;; chmod after save
