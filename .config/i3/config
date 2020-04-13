@@ -172,9 +172,13 @@ bar {
 }
 
 
-# move to workspace
+# move to previous/next workspace
 bindsym $mod+p workspace prev
 bindsym $mod+n workspace next
+
+# move focused container to previous/next workspace
+bindsym $mod+Shift+p exec "i3-msg move container to workspace $(expr $(i3-msg -t get_workspaces | jq '.[] | select(.focused).num') - 1)"
+bindsym $mod+Shift+n exec "i3-msg move container to workspace $(expr $(i3-msg -t get_workspaces | jq '.[] | select(.focused).num') + 1)"
 
 # terminal
 bindsym Mod1+Control+1 exec urxvt -e tmux
