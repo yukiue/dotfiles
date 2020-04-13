@@ -347,8 +347,8 @@ you should place your code here."
 
 
   ;; mark set
-  (global-set-key (kbd "C-\\") 'set-mark-command)
-  (global-unset-key (kbd "C-SPC"))
+  ;; (global-set-key (kbd "C-\\") 'set-mark-command)
+  ;; (global-unset-key (kbd "C-SPC"))
 
   ;; windmove
   (global-set-key (kbd "C-c <left>") 'windmove-left)
