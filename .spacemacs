@@ -345,23 +345,8 @@ you should place your code here."
   (keyboard-translate ?\C-h ?\C-?)
 
 
-  ;; mark set
-  ;; (global-set-key (kbd "C-\\") 'set-mark-command)
-  ;; (global-unset-key (kbd "C-SPC"))
-
-  ;; windmove
-  (global-set-key (kbd "C-c <left>") 'windmove-left)
-  (global-set-key (kbd "C-c <down>") 'windmove-down)
-  (global-set-key (kbd "C-c <up>") 'windmove-up)
-  (global-set-key (kbd "C-c <right>") 'windmove-right)
-
-
   ;; window layout toggle
   (global-set-key (kbd "C-c E") 'spacemacs/window-layout-toggle)
-
-
-  ;; create new frame
-  (global-set-key "\M-n" 'make-frame)
 
 
   ;; load path
@@ -387,11 +372,6 @@ you should place your code here."
 
   ;; browser
   (setq browse-url-browser-function 'browse-url-chromium)
-
-
-  ;; mozc
-  ;; (require 'mozc)
-  ;; (setq default-input-method "japanese-mozc")
 
 
   ;; chmod after save
