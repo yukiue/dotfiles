@@ -370,7 +370,7 @@ you should place your code here."
   ;; add space between Japanese and English characters
   (global-pangu-spacing-mode 1)
   (setq pangu-spacing-real-insert-separtor t)
-  ;; (add-hook 'text-mode-hook 'pangu-spacing-mode)
+  (add-hook 'text-mode-hook 'pangu-spacing-mode)
 
 
   ;; follow symbolic link
