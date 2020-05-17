@@ -10,4 +10,5 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=1000000
 
-export TEXINPUTS=.:~/lib/texmf//:/usr/share/texlive/texmf-dist//:/etc/texmf//
+export TEXINPUTS=.:~/lib/texmf//:/usr/share/texlive/texmf-dist//:/etc/texmf//:/usr/share/texmf/tex/latex/lm//
+
