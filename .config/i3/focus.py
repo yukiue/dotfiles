@@ -10,10 +10,7 @@ def parse_args():
         description=
         'cycle focused windows in current workspace on i3 Window Manager')
 
-    parser.add_argument('-p',
-                        '--prev',
-                        help='focus the previous window',
-                        action='store_true')
+    parser.add_argument('-r', '--reverse', action='store_true')
 
     args = parser.parse_args()
     return args
@@ -22,7 +19,7 @@ def parse_args():
 def main():
     args = parse_args()
 
-    inc = -1 if args.prev else 1
+    inc = -1 if args.reverse else 1
 
     i3 = Connection()
 
