@@ -7,10 +7,10 @@ from i3ipc import Connection
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description=
-        'cycle focused windows in current workspace on i3 Window Manager')
+        description='cycle focused windows on i3 Window Manager')
 
     parser.add_argument('-r', '--reverse', action='store_true')
+    parser.add_argument('-c', '--current', action='store_true')
 
     args = parser.parse_args()
     return args
@@ -23,17 +23,28 @@ def main():
 
     i3 = Connection()
 
-    focused = i3.get_tree().find_focused()
+    if args.current:
 
-    containers = focused.workspace().descendants()
+        focused = i3.get_tree().find_focused()
 
-    for c in containers[:]:
-        if c.name is None:
-            containers.remove(c)
+        containers = focused.workspace().descendants()
 
-    index = (containers.index(focused) + inc) % len(containers)
+        for c in containers[:]:
+            if c.name is None:
+                containers.remove(c)
 
-    containers[index].command('focus')
+            index = (containers.index(focused) + inc) % len(containers)
+
+        containers[index].command('focus')
+
+    else:
+        all_containers = i3.get_tree().leaves()
+
+        is_focused = [c.focused for c in all_containers]
+
+        index = (is_focused.index(True) + inc) % len(all_containers)
+
+        all_containers[index].command('focus')
 
 
 if __name__ == "__main__":
