@@ -8,3 +8,4 @@ bindkey -e
 
 # pip completion
 eval "`pip3 completion --zsh`"
+export PATH="$HOME/.anyenv/bin:$PATH"
