@@ -544,6 +544,14 @@ you should place your code here."
                    "\n"
                    _
                    )) auto-insert-alist))
+  (setq auto-insert-alist
+        (append '(
+                  (("\\.rb$" . "ruby template")
+                   nil
+                   "#!/usr/bin/env ruby\n"
+                   "\n"
+                   _
+                   )) auto-insert-alist))
 
 
   ;; restart emacs
