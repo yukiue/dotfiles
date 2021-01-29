@@ -209,7 +209,7 @@ bindsym --release Shift+Print exec scrot -u ~/pictures/screeenshot_%Y%m%d_%H%M%S
 # startup
 exec urxvt -e tmux
 exec --no-startup-id volumeicon
-exec --no-startup-id feh --randomize --bg-scale $HOME/.config/i3/wallpapers/*
+exec --no-startup-id feh --randomize --bg-scale $HOME/.config/i3/wallpapers/birthday.png
 exec --no-startup-id compton -f
 
 # resize and move a floating window
