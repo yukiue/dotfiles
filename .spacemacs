@@ -31,6 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     rust
+     octave
      go
      ruby
      html
@@ -39,7 +41,7 @@ values."
      pdf-tools
      ;; vimscript
      javascript
-     octave
+     ;; octave
      graphviz
      (python :variables
              python-enable-yapf-format-on-save t
@@ -81,6 +83,7 @@ values."
      magit
      pangu-spacing
      markdown-preview-mode
+     ;; etherpad
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -406,6 +409,7 @@ you should place your code here."
 
 
   ;; mew
+  ;; (setq mew-prog-ssl "/usr/bin/stunnel")
   (global-set-key "\C-xm" 'mew)
   (setq mew-imap-size 100000000) ;; 100MB
   (setq mew-use-cached-passwd t)
@@ -430,7 +434,7 @@ you should place your code here."
   ;; mew-summary-execute-external (C-c C-e)
   (setq mew-prog-pdf-ext "mupdf")
   (setq mew-prog-image/*-ext "mupdf")
-  (setq mew-prog-postscript "evince")
+  (setq mew-prog-postscript "gv")
   (setq mew-prog-msword-ext "xdg-open")
   (setq mew-prog-msexcel-ext "xdg-open")
   (setq mew-prog-mspowerpoint-ext "xdg-open")
@@ -651,6 +655,28 @@ you should place your code here."
   ;; markdown preview mode
   (setq markdown-preview-stylesheets 
         (list "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css"))
+
+
+  ;; math-mode
+  ;; (require 'math-mode)
+
+  ;; zf-mode
+  ;; (require 'zf)
+  ;; (zf-mode 1)
+
+  ;; etherpad
+  ;; (use-package etherpad
+  ;;   :config (setq etherpad-server "http://localhost:9001"
+  ;;                 etherpad-apikey "c72c78943d580dea8eff39dc6e25a922bd846ff4f65efe9c0e0607c4e42648a7"
+  ;;                 etherpad-autosync nil)
+  ;;   :bind (("C-c e" . etherpad-edit)
+  ;;          :map etherpad-mode-map
+  ;;          ("C-c c" . etherpad-save))
+  ;;   )
+
+  ;; format-paragraph
+  (autoload 'format-paragraph "format-paragraph" nil t)
+  (global-set-key "\M-p" 'format-paragraph)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -660,9 +686,10 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (go-guru go-eldoc company-go go-mode markdown-preview-mode web-server websocket rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby pangu-spacing goto-chg bind-map bind-key packed mew undo-tree jedi jedi-core python-environment epc ctable concurrent deferred pdf-tools tablist company-anaconda anaconda-mode disaster company-c-headers cmake-mode clang-format elscreen-mew recentf-ext flyspell-correct-helm flyspell-correct auto-dictionary all-the-icons memoize async gnu-elpa-keyring-update vimrc-mode dactyl-mode company-auctex auctex-latexmk auctex powerline spinner parent-mode pkg-info epl flx highlight iedit anzu f s popup dash mozc hydra lv projectile avy smartparens evil helm helm-core prettier-js elscreen yapfify web-mode web-beautify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc hy-mode helm-pydoc helm-css-scss haml-mode graphviz-dot-mode emmet-mode cython-mode csv-mode company-web web-completion-data company-tern dash-functional tern company-anac onda coffee-mode pythonic smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (etherpad 0xc parsec toml-mode racer rust-mode flycheck-rust cargo go-guru go-eldoc company-go go-mode markdown-preview-mode web-server websocket rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby pangu-spacing goto-chg bind-map bind-key packed mew undo-tree jedi jedi-core python-environment epc ctable concurrent deferred pdf-tools tablist company-anaconda anaconda-mode disaster company-c-headers cmake-mode clang-format elscreen-mew recentf-ext flyspell-correct-helm flyspell-correct auto-dictionary all-the-icons memoize async gnu-elpa-keyring-update vimrc-mode dactyl-mode company-auctex auctex-latexmk auctex powerline spinner parent-mode pkg-info epl flx highlight iedit anzu f s popup dash mozc hydra lv projectile avy smartparens evil helm helm-core prettier-js elscreen yapfify web-mode web-beautify tagedit slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc hy-mode helm-pydoc helm-css-scss haml-mode graphviz-dot-mode emmet-mode cython-mode csv-mode company-web web-completion-data company-tern dash-functional tern company-anac onda coffee-mode pythonic smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
