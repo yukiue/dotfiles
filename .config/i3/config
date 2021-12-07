@@ -210,7 +210,7 @@ bindsym --release Shift+Print exec scrot -u ~/pictures/screeenshot_%Y%m%d_%H%M%S
 exec urxvt -e tmux
 exec --no-startup-id volumeicon
 exec --no-startup-id feh --randomize --bg-scale $HOME/.config/i3/wallpapers/birthday.png
-exec --no-startup-id compton -f
+# exec --no-startup-id compton -cbm 0.75
 
 # resize and move a floating window
 bindsym Mod1+Control+apostrophe floating toggle, exec "wmctrl -i -r $(printf 0x%x $(xdotool getwindowfocus)) -e 0,0,40,800,600"
