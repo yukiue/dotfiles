@@ -656,6 +656,8 @@ you should place your code here."
   (setq markdown-preview-stylesheets 
         (list "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css"))
 
+  ;; stop watch
+  (require 'stopwatch)
 
   ;; math-mode
   ;; (require 'math-mode)
